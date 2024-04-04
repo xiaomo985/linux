@@ -43,7 +43,7 @@
 		复制密钥
 		`cat /home/like/.ssh/id_rsa`
 		粘贴命令行密钥到github
-		![[Pasted image 20240404094735.png]]
+		![[github_ssh.png]]
 		如上图位置
 	22端口可能会被防火墙屏蔽
 		`vim ~/.ssh/config`创建一个config文件
