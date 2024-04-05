@@ -46,7 +46,7 @@
 			匹配条件可以是数据包的来源 IP、目标 IP、协议、端口等。
 			动作可以是接受（ACCEPT）、拒绝（REJECT）、丢弃（DROP）、转发（FORWARD）等。
 		`iptables`基本命令
-			列出当前规则集：`iptables -L`
+			列出当前规则集：`sudo iptables -L`
 			清空所有规则：`iptables -F`
 			删除用户定义链：`iptables -X`
 			将当前规则保存到文件中：`iptables-save`
