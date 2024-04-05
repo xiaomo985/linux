@@ -16,11 +16,12 @@
 	1. 生成ssh密钥：`ssh-keygen -t rsa -b 4096 -C "xiaomo985@outlook.com"`
 	2. 保存路径为`/home/like/.ssh/id_rsa`
 	3. 添加密钥到ssh-agent：
-	4. 后台启动`ssh-agent``eval "$(ssh-agent -s)"`
-	5. 添加已经生成的密钥：`ssh-add /home/like/.ssh/id_rsa`
-	6. 添加密钥到github账户：
-		1. 复制密钥`cat /home/like/.ssh/id_rsa`；粘贴命令行密钥到github如下图
-		![[github_ssh.png]]	
+		1. 后台启动`ssh-agent`：`eval "$(ssh-agent -s)"`
+		2. 添加已经生成的密钥：`ssh-add /home/like/.ssh/id_rsa`
+		3. 添加密钥到github账户：
+			1. 复制密钥`cat /home/like/.ssh/id_rsa`；
+			2. 粘贴命令行密钥到github如下图
+				![[github_ssh.png]]	
 3. 22端口可能会被防火墙屏蔽
 	1. 创建一个config文件: `vim ~/.ssh/config`
 	2. 写入下面内容:
