@@ -9,6 +9,9 @@
 		创建目录`mkdir 新目录`
 		显示整个文件内容`cat 文件名`
 		修改文件权限`chmod 777 文件`4：读；2：写；1：运行;
+		在文件中搜索指定模式：`grep`
+		搜索文件和目录：`find`
+		使用数据库快速搜索文件：`locate`
 	1. 系统
 		显示系统信息`uname`
 		显示磁盘空间使用情况`df`
@@ -20,6 +23,7 @@
 		添加用户`useradd`或`adduser`
 		修改用户密码`passwd`
 		添加用户组`groupadd`或`addgroup`
+		查看所有用户账户信息：`cat /etc/passwd | grep '/bin/bash'`
 	1. 网络
 		测试网络连通性`ping`
 		显示和配置网络接口`ifconfig`或`ip`
@@ -63,9 +67,13 @@
 			443：HTTPS,用于加密web服务
 			3306：MySQL数据库服务
 			5432：PostgreSQL数据库服务
+	将数据由内存同步到硬盘：`sync`
+	关机命令：`shutdown -h now`或者`halt`
+	重启命令：`shutdown -r now`或者`reboot`
 ----
 
 1. 配置方法
 	1. 输入法配置
 	2. 换源
 	3. 安装软件
+		
