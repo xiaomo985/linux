@@ -50,14 +50,25 @@
 				2. 匹配条件可以是数据包的来源 IP、目标 IP、协议、端口等。
 				3. 动作可以是接受（ACCEPT）、拒绝（REJECT）、丢弃（DROP）、转发（FORWARD）等。
 			5. `iptables`基本命令
-				1. 列出当前规则集：`sudo iptables -L`
-				2. 清空所有规则：`iptables -F`
-				3. 删除用户定义链：`iptables -X`
-				4. 将当前规则保存到文件中：`iptables-save`
-				5. 从文件中加载规则：`iptables-restore`
-				6. 允许特定端口的TCP端口流入流量：`iptables -A INPUT -p tcp --dport port_number -j ACCEPT`
-				7. 允许特定端口的TCP端口流出流量：`iptables -A OUPUT -p tcp --dport port_number -j ACCEPT`
-				8. 持久化：iptables规则在系统重启后重置，需要规则持久化，要把规则保存在文件中，开机加载该文件
+				1.  查看防火墙状态：`systemctl status iptables.service`
+				2. 停止防火墙：`systemctl stop iptables.service`
+				3. 启动防火墙：`systemctl start iptables.service`
+				4. 重启防火墙：`systemctl restart iptables.service`
+				5. 禁止开机启动防火墙：`systemctl disable iptables.service`
+				6. 开机启动防火墙：`systemctl enable iptables.service`
+				7. 查询防火墙开放端口：`iptables -L -n`
+				8. 允许特定端口的TCP端口流入流量：`iptables -A INPUT -p tcp --dport port_number -j ACCEPT`
+				9. 允许特定端口的TCP端口流出流量：`iptables -A OUPUT -p tcp --dport port_number -j ACCEPT`
+				10. 开放端口给指定IP：`iptables -A INPUT -p tcp -s IP -j ACCEPT`
+				11. 禁止端口给指定IP：`iptables -A INPUT -p tcp -s IP -j DROP`
+				12. 开放指定端口给指定IP：`iptables -A INPUT -s IP -p tcp -m tcp --dort 端口号 -j ACCEPT`
+				13. 禁止指定IP访问指定端口：`iptables -A OUTPUT -s IP -p tcp -m tcp --dort 端口号 -j DROP`
+				14. 列出当前规则集：`sudo iptables -L`
+				15. 清空所有规则：`iptables -F`
+				16. 删除用户定义链：`iptables -X`
+				17. 将当前规则保存到文件中：`iptables-save`
+				18. 从文件中加载规则：`iptables-restore`
+				19. 持久化：iptables规则在系统重启后重置，需要规则持久化，要把规则保存在文件中，开机加载该文件
 		5. 网络端口范围：0到65535；其中0到1023是系统保留的特权端口
 			1. 常见端口和对应的服务：
 				1. 22：ssh,用于安全远程登陆
