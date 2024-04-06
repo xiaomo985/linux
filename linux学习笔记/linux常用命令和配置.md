@@ -56,7 +56,7 @@
 				4. 重启防火墙：`systemctl restart iptables.service`
 				5. 禁止开机启动防火墙：`systemctl disable iptables.service`
 				6. 开机启动防火墙：`systemctl enable iptables.service`
-				7. 查询防火墙开放端口：`iptables -L -n`
+				7. 查询防火墙开放端口：`sudo iptables -L -n`
 				8. 允许特定端口的TCP端口流入流量：`iptables -A INPUT -p tcp --dport port_number -j ACCEPT`
 				9. 允许特定端口的TCP端口流出流量：`iptables -A OUPUT -p tcp --dport port_number -j ACCEPT`
 				10. 开放端口给指定IP：`iptables -A INPUT -p tcp -s IP -j ACCEPT`
