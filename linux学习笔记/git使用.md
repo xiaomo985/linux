@@ -12,7 +12,7 @@
 	11. 查看已配置的远程仓库：`git remote`
 	12. 添加远程仓库：`git remote add 新名字 网址`
 	13. 从远程仓库抓取：`git fetch +网址`
-	14. 推送到远程仓库：`git push 网址 文件`
+	14. 推送到远程仓库：`git push 远程仓库名 分支名`
 	15. 打上版本标签：`git tag "标签"`
 2. 配置方法
 	1. 生成ssh密钥：`ssh-keygen -t rsa -b 4096 -C "xiaomo985@outlook.com"`
